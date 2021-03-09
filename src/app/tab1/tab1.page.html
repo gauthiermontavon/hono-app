@@ -13,15 +13,20 @@
     </ion-toolbar>
   </ion-header>
     <ion-grid>
-        <ng-container ng-repeat="photo in photos">
-        
-       
-        <ion-row ng-if="$index % 3 === 0">
-            
+        <!--<ng-container ng-repeat="let libraryItem of photos">-->
+          <ng-container *ngFor="let str of test">
+            <div>itemmm</div>
+          </ng-container>
+            <ng-container *ngFor="let libraryItem of photos; let index=index;">
+                <div>item</div>
+        <ion-row ng-if="index % 3 === 0">
+
           <ion-col>
-            <div>{{$index}} of 3</div>
+            <img id="image-{{index}}">
+            <!--<img [src]="libraryItem.thumbnailURL  | cdvphotolibrary">-->
+            <div>{{index}} of 3</div>
           </ion-col>
-          
+
         </ion-row>
          </ng-container>
     </ion-grid>
